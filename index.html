@@ -30,46 +30,48 @@
         </section>
     </header>
     <main id="books">
-        <section class="search-bar">
-            <label>Find a book
-                <input type="text" placeholder="Type something..." class="search-input">
-            </label>
-            <div class="filter-container">
-                <label>Genre
-                    <select name="genre" id="genre-selection">
-                        <option value="best-sellers">Best sellers</option>
-                        <option value="novels">Novels</option>
-                        <option value="sci-fi">Sci-Fi</option>
-                    </select>
+        <div class="content-container">
+            <section class="search-bar">
+                <label class="search-label">Find a book
+                    <input type="text" placeholder="Type something..." class="search-input">
                 </label>
-                <label>Order
-                    <select name="order" id="order-selection">
-                        <option value="a-z">A-Z</option>
-                        <option value="z-a">Z-A</option>
-                    </select>
-                </label>
-                <input type="submit" value="Search" class="button" id="search-button">
-            </div>
-        </section>
-        <section class="bookshelf" id="best-sellers-bookshelf">
-            <h3 class="title">Best sellers</h3>
-            <div class="book-container" id="best-sellers-book-container">
-                <!-- JS code -->
-            </div>
-        </section>
-        <section class="bookshelf" id="novels-bookshelf">
-            <h3 class="title">Novels</h3>
-            <div class="book-container" id="novel-book-container">
-                <!-- JS code -->
-            </div>
-        </section>
-        <section class="bookshelf" id="sci-fi-bookshelf">
-            <h3 class="title">Sci-Fi</h3>
-            <div class="book-container" id="sci-fi-book-container">
-                <!-- JS code -->
-            </div>
-        </section>
-    </main>
+                <div class="filter-container">
+                    <label>Genre
+                        <select name="genre" id="genre-selection">
+                            <option value="best-sellers">Best sellers</option>
+                            <option value="novels">Novels</option>
+                            <option value="sci-fi">Sci-Fi</option>
+                        </select>
+                    </label>
+                    <label>Order
+                        <select name="order" id="order-selection">
+                            <option value="a-z">A-Z</option>
+                            <option value="z-a">Z-A</option>
+                        </select>
+                    </label>
+                    <input type="submit" value="Search" class="search-button" id="search-button">
+                </div>
+            </section>
+            <section class="bookshelf" id="best-sellers-bookshelf">
+                <h3 class="title">Best sellers</h3>
+                <div class="book-container" id="best-sellers-book-container">
+                    <!-- JS code -->
+                </div>
+            </section>
+            <section class="bookshelf" id="novels-bookshelf">
+                <h3 class="title">Novels</h3>
+                <div class="book-container" id="novel-book-container">
+                    <!-- JS code -->
+                </div>
+            </section>
+            <section class="bookshelf" id="sci-fi-bookshelf">
+                <h3 class="title">Sci-Fi</h3>
+                <div class="book-container" id="sci-fi-book-container">
+                    <!-- JS code -->
+                </div>
+            </section>
+        </main>
+        </div>
     <footer>
         <p class="credits">Designed and developed by Candela Olha</p>
         <a href="#top" class="link">Back to top ↑</a>

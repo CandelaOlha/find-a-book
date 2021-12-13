@@ -20,10 +20,10 @@ header .nav-bar {
   padding: 20px 40px;
 }
 header .nav-bar .content-container {
-  align-items: center;
   display: flex;
   max-width: 1236px;
   width: 100%;
+  align-items: center;
 }
 header .nav-bar .content-container i {
   background-color: #fff;
@@ -66,6 +66,7 @@ header .hero-section .content-container .text-container .title {
 }
 header .hero-section .content-container .text-container .cta {
   background-color: #2176ff;
+  border: none;
   border-radius: 30px;
   color: #fff;
   font-size: 16px;
@@ -79,6 +80,70 @@ header .hero-section .content-container .text-container .cta:hover {
 header .hero-section .content-container .image {
   max-width: 445px;
   transform: rotate(15deg);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+main .content-container {
+  display: flex;
+  max-width: 1236px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+main .content-container .search-bar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 120px;
+}
+main .content-container .search-bar .search-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  font-weight: 600;
+}
+main .content-container .search-bar .search-label .search-input {
+  border: 1px solid #313131;
+  border-radius: 30px;
+  color: #313131;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 16px 128px 16px 32px;
+}
+main .content-container .search-bar .filter-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .content-container .search-bar .filter-container label {
+  color: #313131;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 40px;
+}
+main .content-container .search-bar .filter-container label select {
+  border: none;
+  color: #5a5a5a;
+  font-size: 16px;
+  margin-left: 5px;
+}
+main .content-container .search-bar .filter-container .search-button {
+  background-color: #2176ff;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+  padding: 16px 32px;
+  text-decoration: none;
+  transition: 0.1s;
+}
+main .content-container .search-bar .filter-container .search-button:hover {
+  background-color: #075eeb;
 }
 
 /*# sourceMappingURL=style.css.map */
