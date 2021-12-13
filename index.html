@@ -5,21 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Find a Book</title>
 </head>
 <body>
     <header id="top">
         <nav class="nav-bar">
-            <i class="fas fa-book-open"></i>
-            <h1 class="brand-name">Find a Book</h1>
+            <div class="content-container">
+                <i class="fas fa-book-open"></i>
+                <h1 class="brand-name">Find a Book</h1>
+            </div>
         </nav>
         <section class="hero-section">
-            <div class="text-container">
-                <h2 class="title">Your favorite books, just one click away.</h2>
-                <a href="#books" class="button">Find a book</a>
+            <div class="content-container">
+                <div class="text-container">
+                    <h2 class="title">Your favorite books, just one click away.</h2>
+                    <a href="#books" class="cta">Find a book</a>
+                </div>
+                <img src="images/books.svg" alt="Book catalogue slider" class="image">
             </div>
-            <img src="images/books.svg" alt="Book catalogue slider" class="image">
         </section>
     </header>
     <main id="books">
