@@ -10,17 +10,40 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="nav-bar">
             <i class="fas fa-book-open"></i>
             <h1 class="brand-name">Find a Book</h1>
         </nav>
         <section class="hero-section">
             <div class="text-container">
                 <h2 class="title">Your favorite books, just one click away.</h2>
-                <a href="#books" class="link">Find a book</a>
+                <a href="#books" class="button">Find a book</a>
             </div>
             <img src="images/books.svg" alt="Book catalogue slider" class="image">
         </section>
     </header>
+    <main id="books">
+        <section class="search-bar">
+            <label>Find a book
+                <input type="text" placeholder="Type something..." class="search-input">
+            </label>
+            <div class="filter-container">
+                <label>Genre
+                    <select name="genre" id="genre-selection">
+                        <option value="best-sellers">Best sellers</option>
+                        <option value="novels">Novels</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                    </select>
+                </label>
+                <label>Order
+                    <select name="order" id="order-selection">
+                        <option value="a-z">A-Z</option>
+                        <option value="z-a">Z-A</option>
+                    </select>
+                </label>
+                <input type="submit" value="Search" class="button" id="search-button">
+            </div>
+        </section>
+    </main>
 </body>
 </html>
