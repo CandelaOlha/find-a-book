@@ -69,6 +69,7 @@ header .hero-section .content-container .text-container .cta {
   border: none;
   border-radius: 30px;
   color: #fff;
+  cursor: pointer;
   font-size: 16px;
   padding: 16px 32px;
   text-decoration: none;
@@ -119,6 +120,7 @@ main .content-container .search-bar .filter-container {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  padding: 20px 0;
 }
 main .content-container .search-bar .filter-container label {
   color: #313131;
@@ -137,6 +139,7 @@ main .content-container .search-bar .filter-container .search-button {
   border: none;
   border-radius: 30px;
   color: #fff;
+  cursor: pointer;
   font-size: 16px;
   padding: 16px 32px;
   text-decoration: none;
@@ -144,6 +147,22 @@ main .content-container .search-bar .filter-container .search-button {
 }
 main .content-container .search-bar .filter-container .search-button:hover {
   background-color: #075eeb;
+}
+main .content-container .bookshelf {
+  display: flex;
+  flex-direction: column;
+  padding: 120px 0;
+}
+main .content-container .bookshelf .title {
+  font-size: 40px;
+  font-weight: 600px;
+  margin-bottom: 40px;
+}
+main .content-container .bookshelf .book-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */

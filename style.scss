@@ -12,6 +12,7 @@ $primary-font: "Inter", sans-serif;
   border: none;
   border-radius: 30px;
   color: $light-color;
+  cursor: pointer;
   font-size: 16px;
   padding: 16px 32px;
   text-decoration: none;
@@ -150,6 +151,22 @@ main {
         .search-button {
           @include cta();
         }
+      }
+    }
+    .bookshelf {
+      display: flex;
+      flex-direction: column;
+      padding: 120px 0;
+      .title {
+        font-size: 40px;
+        font-weight: 600px;
+        margin-bottom: 40px;
+      }
+      .book-container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
     }
   }
