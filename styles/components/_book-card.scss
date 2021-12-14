@@ -1,0 +1,48 @@
+main {
+  .content-container {
+    .bookshelf {
+      .book-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 10px;
+        .book-image-container {
+          max-height: 195px;
+          overflow: hidden;
+          .book-image {
+            max-width: 100%;
+          }
+        }
+        .book-info {
+          font-family: $font-primary;
+          margin: 20px 0;
+          .book-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+          .book-link {
+            @include link();
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+
+@media screen and (max-width: 460px) {
+  main {
+    .content-container {
+      .bookshelf {
+        .book-card {
+          margin: 0 0 40px 0;
+        }
+        .book-card:nth-child(5),
+        .book-card:nth-child(6) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

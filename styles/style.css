@@ -234,12 +234,49 @@ main .content-container .bookshelf .title {
 main .content-container .bookshelf .book-container {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 @media screen and (max-width: 599px) {
   main .content-container .bookshelf .title {
     font-size: 30px;
+  }
+}
+main .content-container .bookshelf .book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+main .content-container .bookshelf .book-card .book-image-container {
+  max-height: 195px;
+  overflow: hidden;
+}
+main .content-container .bookshelf .book-card .book-image-container .book-image {
+  max-width: 100%;
+}
+main .content-container .bookshelf .book-card .book-info {
+  font-family: "Inter", sans-serif;
+  margin: 20px 0;
+}
+main .content-container .bookshelf .book-card .book-info .book-name {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+main .content-container .bookshelf .book-card .book-info .book-link {
+  color: #2176ff;
+  border-bottom: 1px solid #2176ff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 460px) {
+  main .content-container .bookshelf .book-card {
+    margin: 0 0 40px 0;
+  }
+  main .content-container .bookshelf .book-card:nth-child(5),
+main .content-container .bookshelf .book-card:nth-child(6) {
+    margin-bottom: 0;
   }
 }
 html {
