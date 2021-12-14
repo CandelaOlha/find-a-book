@@ -1,7 +1,5 @@
 footer {
-  display: flex;
-  justify-content: center;
-  padding: 0 40px;
+  @include section();
   .content-container {
     @include content-container();
     justify-content: space-between;
