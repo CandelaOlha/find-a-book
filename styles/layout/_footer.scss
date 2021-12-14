@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+  .content-container {
+    @include content-container();
+    justify-content: space-between;
+    padding: 20px 0;
+    .credits {
+      color: $color-font;
+    }
+    .link {
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+}

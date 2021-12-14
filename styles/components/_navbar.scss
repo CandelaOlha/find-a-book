@@ -1,0 +1,25 @@
+header {
+  .nav-bar {
+    background-color: $color-primary;
+    color: $color-light;
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+    .content-container {
+      @include content-container();
+      align-items: center;
+      i {
+        background-color: $color-light;
+        border-radius: 5px;
+        color: $color-primary;
+        font-size: 20px;
+        margin-right: 10px;
+        padding: 5px;
+      }
+      .brand-name {
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+  }
+}
