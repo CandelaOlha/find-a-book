@@ -189,4 +189,8 @@ main .content-container .bookshelf .book-container {
   justify-content: space-between;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*# sourceMappingURL=style.css.map */
