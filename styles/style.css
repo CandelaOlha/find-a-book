@@ -7,7 +7,6 @@
 
 body {
   background-color: #fbfbfb;
-  scroll-behavior: smooth;
 }
 
 main {
@@ -42,6 +41,7 @@ footer .content-container .credits {
 }
 footer .content-container .link {
   color: #2176ff;
+  border-bottom: none;
   text-decoration: none;
 }
 

@@ -29,3 +29,9 @@
     background-color: $color-stronger-primary;
   }
 }
+
+@mixin link($border-bottom: 1px solid $color-primary) {
+  color: $color-primary;
+  border-bottom: $border-bottom;
+  text-decoration: none;
+}

@@ -7,8 +7,7 @@ footer {
       color: $color-font;
     }
     .link {
-      color: $color-primary;
-      text-decoration: none;
+      @include link($border-bottom: none);
     }
   }
 }
