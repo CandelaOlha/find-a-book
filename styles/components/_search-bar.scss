@@ -3,7 +3,6 @@ main {
     .search-bar {
       align-items: center;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       padding-bottom: 120px;
       .search-label {
@@ -23,7 +22,6 @@ main {
       .filter-container {
         align-items: center;
         display: flex;
-        flex-wrap: wrap;
         padding: 20px 0;
         label {
           color: $color-font;
@@ -40,6 +38,41 @@ main {
         }
         .search-button {
           @include cta();
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+
+@media screen and (max-width: 940px) {
+  main {
+    .content-container {
+      .search-bar {
+        align-items: stretch;
+        flex-direction: column;
+        .filter-container {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  main {
+    .content-container {
+      .search-bar {
+        .filter-container {
+          align-items: stretch;
+          flex-direction: column;
+          label {
+            margin: 10px;
+          }
+          .search-button {
+            margin-top: 10px;
+          }
         }
       }
     }

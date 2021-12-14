@@ -17,3 +17,17 @@ main {
     }
   }
 }
+
+// Responsive styles
+
+@media screen and (max-width: 599px) {
+  main {
+    .content-container {
+      .bookshelf {
+        .title {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

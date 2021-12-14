@@ -45,6 +45,16 @@ footer .content-container .link {
   text-decoration: none;
 }
 
+@media screen and (max-width: 599px) {
+  footer .content-container {
+    align-items: stretch;
+    flex-direction: column;
+    font-size: 14px;
+  }
+  footer .content-container .credits {
+    margin-bottom: 20px;
+  }
+}
 header .nav-bar {
   background-color: #2176ff;
   color: #fff;
@@ -118,10 +128,28 @@ header .hero-section .content-container .image {
   transform: rotate(15deg);
 }
 
+@media screen and (max-width: 1224px) {
+  header .hero-section {
+    height: auto;
+  }
+  header .hero-section .content-container .text-container {
+    margin-bottom: 120px;
+  }
+}
+@media screen and (max-width: 599px) {
+  header .hero-section {
+    height: auto;
+  }
+  header .hero-section .content-container .text-container {
+    margin-bottom: 100px;
+  }
+  header .hero-section .content-container .text-container .title {
+    font-size: 50px;
+  }
+}
 main .content-container .search-bar {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 120px;
 }
@@ -142,7 +170,6 @@ main .content-container .search-bar .search-label .search-input {
 main .content-container .search-bar .filter-container {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
   padding: 20px 0;
 }
 main .content-container .search-bar .filter-container label {
@@ -173,6 +200,27 @@ main .content-container .search-bar .filter-container .search-button:hover {
   background-color: #075eeb;
 }
 
+@media screen and (max-width: 940px) {
+  main .content-container .search-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  main .content-container .search-bar .filter-container {
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .content-container .search-bar .filter-container {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  main .content-container .search-bar .filter-container label {
+    margin: 10px;
+  }
+  main .content-container .search-bar .filter-container .search-button {
+    margin-top: 10px;
+  }
+}
 main .content-container .bookshelf {
   display: flex;
   flex-direction: column;
@@ -189,6 +237,11 @@ main .content-container .bookshelf .book-container {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 599px) {
+  main .content-container .bookshelf .title {
+    font-size: 30px;
+  }
+}
 html {
   scroll-behavior: smooth;
 }

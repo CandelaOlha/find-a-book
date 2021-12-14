@@ -30,3 +30,34 @@ header {
     }
   }
 }
+
+// Responsive styles
+
+@media screen and (max-width: 1224px) {
+  header {
+    .hero-section {
+      height: auto;
+      .content-container {
+        .text-container {
+          margin-bottom: 120px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  header {
+    .hero-section {
+      height: auto;
+      .content-container {
+        .text-container {
+          margin-bottom: 100px;
+          .title {
+            font-size: 50px;
+          }
+        }
+      }
+    }
+  }
+}

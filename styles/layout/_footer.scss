@@ -12,3 +12,18 @@ footer {
     }
   }
 }
+
+// Responsive styles
+
+@media screen and (max-width: 599px) {
+  footer {
+    .content-container {
+      align-items: stretch;
+      flex-direction: column;
+      font-size: 14px;
+      .credits {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
