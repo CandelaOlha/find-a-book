@@ -2,7 +2,6 @@ footer {
   @include section();
   .content-container {
     @include content-container();
-    justify-content: space-between;
     padding: 20px 0;
     .credits {
       color: $color-font;

@@ -1,10 +1,3 @@
-/* Reusable code */
-/* Basic styles */
-html {
-  background-color: #fbfbfb;
-  scroll-behavior: smooth;
-}
-
 * {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
@@ -12,7 +5,46 @@ html {
   padding: 0;
 }
 
-/* Header styles */
+body {
+  background-color: #fbfbfb;
+  scroll-behavior: smooth;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+main .content-container {
+  align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1236px;
+  width: 100%;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+footer .content-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1236px;
+  width: 100%;
+  padding: 20px 0;
+}
+footer .content-container .credits {
+  color: #313131;
+}
+footer .content-container .link {
+  color: #2176ff;
+  text-decoration: none;
+}
+
 header .nav-bar {
   background-color: #2176ff;
   color: #fff;
@@ -21,10 +53,11 @@ header .nav-bar {
   padding: 20px 40px;
 }
 header .nav-bar .content-container {
+  align-items: center;
   display: flex;
+  justify-content: flex-start;
   max-width: 1236px;
   width: 100%;
-  align-items: center;
 }
 header .nav-bar .content-container i {
   background-color: #fff;
@@ -38,6 +71,7 @@ header .nav-bar .content-container .brand-name {
   font-size: 25px;
   font-weight: 500;
 }
+
 header .hero-section {
   align-items: center;
   display: flex;
@@ -48,10 +82,10 @@ header .hero-section {
 header .hero-section .content-container {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1236px;
   width: 100%;
+  flex-wrap: wrap;
 }
 header .hero-section .content-container .text-container {
   align-items: flex-start;
@@ -84,18 +118,6 @@ header .hero-section .content-container .image {
   transform: rotate(15deg);
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  padding: 0 40px;
-}
-main .content-container {
-  display: flex;
-  max-width: 1236px;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-}
 main .content-container .search-bar {
   align-items: center;
   display: flex;
@@ -150,6 +172,7 @@ main .content-container .search-bar .filter-container .search-button {
 main .content-container .search-bar .filter-container .search-button:hover {
   background-color: #075eeb;
 }
+
 main .content-container .bookshelf {
   display: flex;
   flex-direction: column;
@@ -163,29 +186,7 @@ main .content-container .bookshelf .title {
 main .content-container .bookshelf .book-container {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-}
-
-/* Footer styles */
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 0 40px;
-}
-footer .content-container {
-  display: flex;
-  max-width: 1236px;
-  width: 100%;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-footer .content-container .credits {
-  color: #313131;
-}
-footer .content-container .link {
-  color: #2176ff;
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

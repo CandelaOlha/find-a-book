@@ -6,8 +6,7 @@ header {
     justify-content: center;
     padding: 20px 40px;
     .content-container {
-      @include content-container();
-      align-items: center;
+      @include content-container($justify-content: flex-start);
       i {
         background-color: $color-light;
         border-radius: 5px;

@@ -1,8 +1,7 @@
 main {
   @include section();
   .content-container {
-    @include content-container();
+    @include content-container($align-items: stretch);
     flex-direction: column;
-    justify-content: center;
   }
 }

@@ -6,12 +6,8 @@ header {
     justify-content: center;
     padding: 120px 40px;
     .content-container {
-      align-items: center;
-      display: flex;
+      @include content-container();
       flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1236px;
-      width: 100%;
       .text-container {
         align-items: flex-start;
         display: flex;
