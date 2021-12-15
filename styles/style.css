@@ -248,6 +248,7 @@ main .content-container .bookshelf .book-card {
   flex-direction: column;
   justify-content: space-between;
   margin: 0 10px;
+  max-width: calc(16.6666666667% - 50px);
 }
 main .content-container .bookshelf .book-card .book-image-container {
   max-height: 195px;
@@ -262,6 +263,7 @@ main .content-container .bookshelf .book-card .book-info {
 }
 main .content-container .bookshelf .book-card .book-info .book-name {
   font-weight: 600;
+  line-height: 1.4;
   margin-bottom: 10px;
 }
 main .content-container .bookshelf .book-card .book-info .book-link {

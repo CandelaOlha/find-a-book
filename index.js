@@ -2,18 +2,28 @@ const bestSellersBookContainer = document.querySelector("#best-sellers-book-cont
 const novelBookContainer = document.querySelector("#novel-book-container");
 const sciFiBookContainer = document.querySelector("#sci-fi-book-container");
 
-const getBestSellersInfo = () => {
-    fetch("https://www.googleapis.com/books/v1/users/110316076195152108075/bookshelves/1001/volumes?key=AIzaSyDuUyytYz0OAoxTiqQefzhgYdG1K5v9Q3k")
+const getBooksInfo = (id) => {
+    fetch(`https://www.googleapis.com/books/v1/users/110316076195152108075/bookshelves/${id}/volumes?key=AIzaSyDuUyytYz0OAoxTiqQefzhgYdG1K5v9Q3k`)
     .then(res =>  res.json())
     .then(data => {
       console.log(data);
-      createHTML(data.items)
+      if (id == 1001) {
+        createHTML(data.items, bestSellersBookContainer);
+      }
+      else if (id == 1002) {
+        createHTML(data.items, novelBookContainer);
+      }
+      else if (id == 1003) {
+        createHTML(data.items, sciFiBookContainer);
+      }
     })
   }
   
-getBestSellersInfo();
+getBooksInfo(1001);
+getBooksInfo(1002);
+getBooksInfo(1003);
 
-const createHTML = (books) => {
+const createHTML = (books, container) => {
     const bookCard = books.reduce((acc, curr) => {
         return acc + `
         <figure class="book-card">
@@ -28,5 +38,5 @@ const createHTML = (books) => {
         `
     }, "");
 
-    bestSellersBookContainer.innerHTML = bookCard;
+    container.innerHTML = bookCard;
 }
