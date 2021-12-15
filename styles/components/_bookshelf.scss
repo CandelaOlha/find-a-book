@@ -6,11 +6,11 @@ main {
       padding-bottom: 120px;
       .title {
         font-size: 40px;
-        font-weight: 600px;
+        font-weight: 600;
         margin-bottom: 40px;
       }
       .book-container {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;

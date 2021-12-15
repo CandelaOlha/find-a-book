@@ -32,7 +32,7 @@ const createHTML = (books, container) => {
             </div>
             <figcaption class="book-info">
                 <h4 class="book-name">${curr.volumeInfo.title}</h4>
-                <a href="" class="book-link">More details</a>
+                <span class="book-more-details">More details</span>
             </figcaption>
         </figure>
         `
