@@ -13,13 +13,28 @@ main {
         align-items: flex-start;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
       }
+    }
+    .hidden-bookshelf {
+      display: none;
     }
   }
 }
 
 // Responsive styles
+
+@media screen and (max-width: 970px) {
+  main {
+    .content-container {
+      .bookshelf {
+        .book-container {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 599px) {
   main {

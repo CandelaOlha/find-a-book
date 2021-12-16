@@ -1,43 +1,45 @@
 main {
   .content-container {
     .search-bar {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 120px;
-      .search-label {
-        display: flex;
-        flex-direction: column;
-        font-size: 25px;
-        font-weight: 600;
-        .search-input {
-          border: 1px solid $color-font;
-          border-radius: 30px;
-          color: $color-font;
-          font-size: 16px;
-          margin-top: 10px;
-          padding: 16px 128px 16px 32px;
-        }
-      }
-      .filter-container {
+      margin-bottom: 120px;
+      .search-form {
         align-items: center;
         display: flex;
-        padding: 20px 0;
-        label {
-          color: $color-font;
-          font-size: 16px;
+        justify-content: space-between;
+        .search-label {
+          display: flex;
+          flex-direction: column;
+          font-size: 25px;
           font-weight: 600;
-          margin-right: 40px;
-          select {
-            background-color: transparent;
-            border: none;
-            color: $color-light-grey;
+          .search-input {
+            border: 1px solid $color-font;
+            border-radius: 30px;
+            color: $color-font;
             font-size: 16px;
-            margin-left: 5px;
+            margin-top: 10px;
+            padding: 16px 128px 16px 32px;
           }
         }
-        .search-button {
-          @include cta();
+        .filter-container {
+          align-items: center;
+          display: flex;
+          padding: 20px 0;
+          label {
+            color: $color-font;
+            font-size: 16px;
+            font-weight: 600;
+            margin-right: 40px;
+            select {
+              background-color: transparent;
+              border: none;
+              color: $color-light-grey;
+              font-size: 16px;
+              margin-left: 5px;
+            }
+          }
+          .search-button {
+            @include cta();
+          }
         }
       }
     }
@@ -50,10 +52,12 @@ main {
   main {
     .content-container {
       .search-bar {
-        align-items: stretch;
-        flex-direction: column;
-        .filter-container {
-          justify-content: flex-end;
+        .search-form {
+          align-items: stretch;
+          flex-direction: column;
+          .filter-container {
+            justify-content: flex-end;
+          }
         }
       }
     }
@@ -64,14 +68,16 @@ main {
   main {
     .content-container {
       .search-bar {
-        .filter-container {
-          align-items: stretch;
-          flex-direction: column;
-          label {
-            margin: 10px;
-          }
-          .search-button {
-            margin-top: 10px;
+        .search-form {
+          .filter-container {
+            align-items: stretch;
+            flex-direction: column;
+            label {
+              margin: 10px;
+            }
+            .search-button {
+              margin-top: 10px;
+            }
           }
         }
       }
