@@ -202,7 +202,7 @@ main .content-container .search-bar .search-form .filter-container .search-butto
   background-color: #075eeb;
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 970px) {
   main .content-container .search-bar .search-form {
     align-items: stretch;
     flex-direction: column;
