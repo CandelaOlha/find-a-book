@@ -32,25 +32,27 @@
     <main id="books">
         <div class="content-container">
             <section class="search-bar">
-                <label class="search-label">Find a book
-                    <input type="text" placeholder="Type something..." class="search-input">
-                </label>
-                <div class="filter-container">
-                    <label>Genre
-                        <select name="genre" id="genre-selection">
-                            <option value="best-sellers">Best sellers</option>
-                            <option value="novels">Novels</option>
-                            <option value="sci-fi">Sci-Fi</option>
-                        </select>
+                <form class="search-form">
+                    <label class="search-label">Find a book
+                        <input type="text" placeholder="Type something..." class="search-input" required>
                     </label>
-                    <label>Order
-                        <select name="order" id="order-selection">
-                            <option value="a-z">A-Z</option>
-                            <option value="z-a">Z-A</option>
-                        </select>
-                    </label>
-                    <input type="submit" value="Search" class="search-button" id="search-button">
-                </div>
+                    <div class="filter-container">
+                        <label>Type
+                            <select name="type" id="type-selection">
+                                <option value="paid-ebooks">Paid ebooks</option>
+                                <option value="free-ebooks">Free ebooks</option>
+                                <option value="ebooks">All</option>
+                            </select>
+                        </label>
+                        <label>Order by
+                            <select name="order" id="order-selection">
+                                <option value="relevance">Relevance</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </label>
+                        <input type="submit" value="Search" class="search-button" id="search-button">
+                    </div>
+                </form>
             </section>
             <section class="bookshelf" id="best-sellers-bookshelf">
                 <h3 class="title">Best sellers</h3>
@@ -67,6 +69,12 @@
             <section class="bookshelf" id="sci-fi-bookshelf">
                 <h3 class="title">Sci-Fi</h3>
                 <div class="book-container" id="sci-fi-book-container">
+                    <!-- JS code -->
+                </div>
+            </section>
+            <section class="hidden-bookshelf" id="search-results">
+                <h3 class="title">Based on your search</h3>
+                <div class="book-container" id="search-results-container">
                     <!-- JS code -->
                 </div>
             </section>
