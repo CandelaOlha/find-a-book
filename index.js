@@ -59,39 +59,14 @@ const createHTML = (books, container) => {
 searchForm.onsubmit = (e) => {
   e.preventDefault();
 
-  fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&langRestrict=en&maxResults=12&key=${apiKey}`)
+  fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=${typeSelection.value}&langRestrict=en&printType=books&orderBy=${orderSelection.value}&maxResults=12&key=${apiKey}`)
   .then(res =>  res.json())
   .then(data => {
-    console.log(data);
     searchResults.classList.remove("hidden-bookshelf");
     searchResults.classList.add("bookshelf");
     bestSellersBookshelf.classList.add("hidden-bookshelf");
     novelsBookshelf.classList.add("hidden-bookshelf");
     sciFiBookshelf.classList.add("hidden-bookshelf");
-    applyTypeFilters();
+    createHTML(data.items, searchResultsContainer);
   })
-}
-
-const applyTypeFilters = () => {
-  if (typeSelection.value === "paid-ebooks") {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=paid-ebooks&langRestrict=en&printType=books&maxResults=12&key=${apiKey}`)
-    .then(res =>  res.json())
-    .then(data => {
-      createHTML(data.items, searchResultsContainer);
-    })
-  }
-  else if (typeSelection.value === "free-ebooks") {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=free-ebooks&langRestrict=en&printType=books&maxResults=12&key=${apiKey}`)
-    .then(res =>  res.json())
-    .then(data => {
-      createHTML(data.items, searchResultsContainer);
-    })
-  }
-  else if (typeSelection.value === "all-ebooks") {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=ebooks&langRestrict=en&printType=books&maxResults=12&key=${apiKey}`)
-    .then(res =>  res.json())
-    .then(data => {
-      createHTML(data.items, searchResultsContainer);
-    })
-  }
 }
