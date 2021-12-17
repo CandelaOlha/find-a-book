@@ -101,10 +101,10 @@ const displayBookDetailsInHTML = (book) => {
   const bookDetails = `
     <div class="book-text-container">
       <h2 class="book-name">${book.volumeInfo.title}</h2>
-      <p class="author-name">Written by <span>${book.volumeInfo.authors[0]}</span</p>
-      <p class="book-description">${book.volumeInfo.description}</p>
-      <p class="book-category">Category: <span>${book.volumeInfo.categories[0]}</span></p>
-      <a href="${book.saleInfo.buyLink}" target="_blank">Buy on Google Play</a>
+      <p class="author-name">Written by <span>${book.volumeInfo.authors}</span</p>
+      <div class="book-description">${book.volumeInfo.description}</div>
+      <p class="book-category">Category: <span>${book.volumeInfo.categories}</span></p>
+      <a href="${book.saleInfo.buyLink}" class="buy-link" target="_blank">Buy on Google Play</a>
     </div>
     <div class="book-image-container">
       <img src="${book.volumeInfo.imageLinks.small}" class="book-image">
@@ -113,6 +113,7 @@ const displayBookDetailsInHTML = (book) => {
 
   bookDetailsSection.innerHTML = bookDetails;
 
+  bookDetailsSection.style.display = "flex";
   heroSection.style.display = "none";
   searchBar.style.display = "none";
   bestSellersBookshelf.classList.add("hidden-bookshelf");

@@ -1,7 +1,63 @@
 main {
   .content-container {
-    .books-details {
+    .book-details {
+      align-items: flex-start;
+      color: $color-font;
       display: none;
+      justify-content: space-between;
+      padding: 120px 0;
+      .book-text-container {
+        padding-right: 80px;
+        .book-name {
+          font-size: 40px;
+          font-weight: 600;
+          margin-bottom: 40px;
+        }
+        .author-name {
+          margin-bottom: 40px;
+          span {
+            font-weight: 600;
+          }
+        }
+        .book-description {
+          line-height: 1.8;
+          margin-bottom: 40px;
+          p {
+            line-height: 1.8; // Esto está repetido porque algunas descripciones vienen con etiquetas <p> adentro y otras no.
+            margin-bottom: 10px;
+          }
+        }
+        .book-category {
+          margin-bottom: 60px;
+          span {
+            font-weight: 600;
+          }
+        }
+        .buy-link {
+          @include cta();
+        }
+      }
+      .book-image-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Responsive styles
+
+@media screen and (max-width: 970px) {
+  main {
+    .content-container {
+      .book-details {
+        flex-direction: column;
+        .book-text-container {
+          margin-bottom: 60px;
+          padding: 0;
+        }
+      }
     }
   }
 }
