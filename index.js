@@ -10,6 +10,9 @@ const searchInput = document.querySelector(".search-input");
 const searchResultsContainer = document.querySelector("#search-results-container");
 const typeSelection = document.querySelector("#type-selection");
 const orderSelection = document.querySelector("#order-selection");
+const bookDetailsSection = document.querySelector(".book-details");
+const heroSection = document.querySelector(".hero-section");
+const searchBar = document.querySelector(".search-bar");
 
 const apiKey = "AIzaSyDuUyytYz0OAoxTiqQefzhgYdG1K5v9Q3k";
 
@@ -18,13 +21,16 @@ const getBooksInfo = (id) => {
     .then(res =>  res.json())
     .then(data => {
       if (id == 1001) {
-        createHTML(data.items, bestSellersBookContainer);
+        displayBooksInHTML(data.items, bestSellersBookContainer);
+        getBookCardID();
       }
       else if (id == 1002) {
-        createHTML(data.items, novelBookContainer);
+        displayBooksInHTML(data.items, novelBookContainer);
+        getBookCardID();
       }
       else if (id == 1003) {
-        createHTML(data.items, sciFiBookContainer);
+        displayBooksInHTML(data.items, sciFiBookContainer);
+        getBookCardID();
       }
     })
   }
@@ -33,7 +39,7 @@ getBooksInfo(1001);
 getBooksInfo(1002);
 getBooksInfo(1003);
 
-const createHTML = (books, container) => {
+const displayBooksInHTML = (books, container) => {
     const bookCard = books.reduce((acc, curr) => {
         if (curr.volumeInfo.title.length >= 30) {
           shortTitle = curr.volumeInfo.title.slice(0, 30);
@@ -41,7 +47,7 @@ const createHTML = (books, container) => {
         }
 
         return acc + `
-        <figure class="book-card">
+        <figure class="book-card" data-id=${curr.id}>
             <div class="book-image-container">
                 <img src="${curr.volumeInfo.imageLinks.thumbnail}" class="book-image">
             </div>
@@ -67,6 +73,49 @@ searchForm.onsubmit = (e) => {
     bestSellersBookshelf.classList.add("hidden-bookshelf");
     novelsBookshelf.classList.add("hidden-bookshelf");
     sciFiBookshelf.classList.add("hidden-bookshelf");
-    createHTML(data.items, searchResultsContainer);
+    displayBooksInHTML(data.items, searchResultsContainer);
   })
+}
+
+const getBookDetails = (id) => {
+  fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+    displayBookDetailsInHTML(data);
+  })
+}
+
+const getBookCardID = () => {
+  const bookCards = document.querySelectorAll(".book-card");
+  for (let i = 0; i < bookCards.length; i++) {
+    bookCards[i].onclick = () => {
+      bookCardID = bookCards[i].dataset.id;
+      console.log(bookCardID);
+      getBookDetails(bookCardID);
+    }
+  }
+}
+
+const displayBookDetailsInHTML = (book) => {
+  const bookDetails = `
+    <div class="book-text-container">
+      <h2 class="book-name">${book.volumeInfo.title}</h2>
+      <p class="author-name">Written by <span>${book.volumeInfo.authors[0]}</span</p>
+      <p class="book-description">${book.volumeInfo.description}</p>
+      <p class="book-category">Category: <span>${book.volumeInfo.categories[0]}</span></p>
+      <a href="${book.saleInfo.buyLink}" target="_blank">Buy on Google Play</a>
+    </div>
+    <div class="book-image-container">
+      <img src="${book.volumeInfo.imageLinks.small}" class="book-image">
+    </div>
+    `
+
+  bookDetailsSection.innerHTML = bookDetails;
+
+  heroSection.style.display = "none";
+  searchBar.style.display = "none";
+  bestSellersBookshelf.classList.add("hidden-bookshelf");
+  novelsBookshelf.classList.add("hidden-bookshelf");
+  sciFiBookshelf.classList.add("hidden-bookshelf");
 }
