@@ -371,6 +371,7 @@ main .content-container .book-details .book-text-container .book-description p {
   margin-bottom: 10px;
 }
 main .content-container .book-details .book-text-container .book-category {
+  line-height: 1.8;
   margin-bottom: 60px;
 }
 main .content-container .book-details .book-text-container .book-category span {
