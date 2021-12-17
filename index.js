@@ -119,4 +119,20 @@ const displayBookDetailsInHTML = (book) => {
   bestSellersBookshelf.classList.add("hidden-bookshelf");
   novelsBookshelf.classList.add("hidden-bookshelf");
   sciFiBookshelf.classList.add("hidden-bookshelf");
+  
+  const bookDescription = document.querySelector(".book-description");
+  const bookCategory = document.querySelector(".book-category");
+  const buyLink = document.querySelector(".buy-link");
+
+  if (book.volumeInfo.description === undefined) {
+    bookDescription.textContent = "No information about this book has been added yet."
+  }
+
+  if (book.volumeInfo.categories === undefined) {
+    bookCategory.style.display = "none";
+  }
+
+  if (book.saleInfo.saleability === "NOT_FOR_SALE") {
+    buyLink.style.display = "none";
+  }
 }
