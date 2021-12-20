@@ -116,6 +116,90 @@ const getBookCategory = (book) => {
   }
 }
 
+const getAverageRating = (book) => {
+  if (book.volumeInfo.averageRating == 1) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 1.5) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 2) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 2.5) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 3) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 3.5) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+    <i class="far fa-star"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 4) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="far fa-star"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 4.5) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+    </div>`
+  }
+  else if (book.volumeInfo.averageRating == 5) {
+    return `<div class="rating-number">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    </div>`
+  }
+}
+
 const displayBookDetailsInHTML = (book) => {
   const bookDetails = `
     <div class="book-text-container">
@@ -123,7 +207,7 @@ const displayBookDetailsInHTML = (book) => {
       <p class="author-name">Written by <span>${book.volumeInfo.authors}</span</p>
       <div class="book-description">${book.volumeInfo.description}</div>
       <p class="book-category">Category: <span>${getBookCategory(book)}</span></p>
-      <p class="book-rating">Average rating: <span>${book.volumeInfo.averageRating}</span></p>
+      <div class="book-rating">${getAverageRating(book)} <p class="opinions">Based on ${book.volumeInfo.ratingsCount} opinions</p></div>
       <a href="${book.saleInfo.buyLink}" class="buy-link" target="_blank">Buy on Google Play</a>
     </div>
     <div class="book-image-container">

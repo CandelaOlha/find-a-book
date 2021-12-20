@@ -378,11 +378,18 @@ main .content-container .book-details .book-text-container .book-category span {
   font-weight: 600;
 }
 main .content-container .book-details .book-text-container .book-rating {
+  display: flex;
+  flex-direction: column;
   line-height: 1.8;
   margin-bottom: 60px;
 }
-main .content-container .book-details .book-text-container .book-rating span {
-  font-weight: 600;
+main .content-container .book-details .book-text-container .book-rating .rating-number {
+  display: flex;
+}
+main .content-container .book-details .book-text-container .book-rating .rating-number i {
+  color: #f3993e;
+  font-size: 20px;
+  margin: 0 2px 5px 0;
 }
 main .content-container .book-details .book-text-container .buy-link {
   background-color: #2176ff;
