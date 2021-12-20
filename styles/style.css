@@ -372,9 +372,16 @@ main .content-container .book-details .book-text-container .book-description p {
 }
 main .content-container .book-details .book-text-container .book-category {
   line-height: 1.8;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 main .content-container .book-details .book-text-container .book-category span {
+  font-weight: 600;
+}
+main .content-container .book-details .book-text-container .book-rating {
+  line-height: 1.8;
+  margin-bottom: 60px;
+}
+main .content-container .book-details .book-text-container .book-rating span {
   font-weight: 600;
 }
 main .content-container .book-details .book-text-container .buy-link {

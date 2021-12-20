@@ -29,6 +29,13 @@ main {
         }
         .book-category {
           line-height: 1.8;
+          margin-bottom: 40px;
+          span {
+            font-weight: 600;
+          }
+        }
+        .book-rating {
+          line-height: 1.8;
           margin-bottom: 60px;
           span {
             font-weight: 600;

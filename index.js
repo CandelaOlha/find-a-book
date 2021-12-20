@@ -107,13 +107,23 @@ const getBookImage = (book) => {
   }
 }
 
+const getBookCategory = (book) => {
+  if (Array.isArray(book.volumeInfo.categories)) { // Esto es para que devuelva solo la primera categoría, porque en algunos casos el array es demasiado largo.
+    return book.volumeInfo.categories[0];
+  }
+  else {
+    return book.volumeInfo.categories;
+  }
+}
+
 const displayBookDetailsInHTML = (book) => {
   const bookDetails = `
     <div class="book-text-container">
       <h2 class="book-name">${book.volumeInfo.title}</h2>
       <p class="author-name">Written by <span>${book.volumeInfo.authors}</span</p>
       <div class="book-description">${book.volumeInfo.description}</div>
-      <p class="book-category">Category: <span>${book.volumeInfo.categories}</span></p>
+      <p class="book-category">Category: <span>${getBookCategory(book)}</span></p>
+      <p class="book-rating">Average rating: <span>${book.volumeInfo.averageRating}</span></p>
       <a href="${book.saleInfo.buyLink}" class="buy-link" target="_blank">Buy on Google Play</a>
     </div>
     <div class="book-image-container">
@@ -133,6 +143,7 @@ const displayBookDetailsInHTML = (book) => {
   
   const bookDescription = document.querySelector(".book-description");
   const bookCategory = document.querySelector(".book-category");
+  const bookRating = document.querySelector(".book-rating");
   const buyLink = document.querySelector(".buy-link");
 
   if (book.volumeInfo.description === undefined) {
@@ -141,6 +152,10 @@ const displayBookDetailsInHTML = (book) => {
 
   if (book.volumeInfo.categories === undefined) {
     bookCategory.style.display = "none";
+  }
+
+  if (book.volumeInfo.averageRating === undefined) {
+    bookRating.style.display = "none";
   }
 
   if (book.saleInfo.saleability === "NOT_FOR_SALE") {
