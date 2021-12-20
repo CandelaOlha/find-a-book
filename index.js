@@ -74,6 +74,7 @@ searchForm.onsubmit = (e) => {
     novelsBookshelf.classList.add("hidden-bookshelf");
     sciFiBookshelf.classList.add("hidden-bookshelf");
     displayBooksInHTML(data.items, searchResultsContainer);
+    getBookCardID();
   })
 }
 
@@ -97,6 +98,15 @@ const getBookCardID = () => {
   }
 }
 
+const getBookImage = (book) => {
+  if (book.volumeInfo.imageLinks.small) {
+    return `<img src="${book.volumeInfo.imageLinks.small}" class="book-image">`;
+  }
+  else {
+    return `<img src="images/empty-image.svg" class="book-image">`;
+  }
+}
+
 const displayBookDetailsInHTML = (book) => {
   const bookDetails = `
     <div class="book-text-container">
@@ -107,7 +117,7 @@ const displayBookDetailsInHTML = (book) => {
       <a href="${book.saleInfo.buyLink}" class="buy-link" target="_blank">Buy on Google Play</a>
     </div>
     <div class="book-image-container">
-      <img src="${book.volumeInfo.imageLinks.small}" class="book-image">
+      ${getBookImage(book)}
     </div>
     `
 
@@ -119,6 +129,7 @@ const displayBookDetailsInHTML = (book) => {
   bestSellersBookshelf.classList.add("hidden-bookshelf");
   novelsBookshelf.classList.add("hidden-bookshelf");
   sciFiBookshelf.classList.add("hidden-bookshelf");
+  searchResults.classList.add("hidden-bookshelf");
   
   const bookDescription = document.querySelector(".book-description");
   const bookCategory = document.querySelector(".book-category");
