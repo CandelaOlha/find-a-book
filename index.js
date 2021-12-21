@@ -80,7 +80,7 @@ const getBooksInfo = () => {
     sciFiBookshelf.classList.add("hidden-bookshelf");
     displayBooksInHTML(data.items, searchResultsContainer);
     getBookCardID();
-    createPagination();
+    createPagination(data.totalItems);
   })
 }
 
@@ -258,52 +258,59 @@ const displayBookDetailsInHTML = (book) => {
   }
 }
 
-const createPagination = () => {
+const createPagination = (totalItems) => {
+  lastPage = Math.ceil(totalItems / 12);
+
   firstPageButton.onclick = () => {
     currentPage = 0;
   
     firstPageButton.disabled = true;
     prevButton.disabled = true;
+    lastPageButton.disabled = false;
+    nextButton.disabled = false;
   
     getBooksInfo();
   }
   
   prevButton.onclick = () => {
-    currentPage--;
+    currentPage = currentPage - 12;
   
-    if (currentPage === 0) {
+    if (currentPage <= 0) {
       firstPageButton.disabled = true;
       prevButton.disabled = true;
     }
+
+    lastPageButton.disabled = false;
+    nextButton.disabled = false;
   
     getBooksInfo();
   }
   
   nextButton.onclick = () => {
-    currentPage++;
+    currentPage = currentPage + 12;
   
+    if (currentPage >= lastPage) {
+      lastPageButton.disabled = true;
+      nextButton.disabled = true;
+    }
+
     firstPageButton.disabled = false;
     prevButton.disabled = false;
-  
-    // if (currentPage == lastPage) {
-    //   lastPageButton.disabled = true;
-    //   nextButton.disabled = true;
-    // }
   
     getBooksInfo();
   }
   
-  // lastPageButton.onclick = () => {
-  //   currentPage = lastPage;
+  lastPageButton.onclick = () => {
+    currentPage = lastPage;
   
-  //   firstPageButton.disabled = false;
-  //   prevButton.disabled = false;
-  //   lastPageButton.disabled = true;
-  //   nextButton.disabled = true;
-  // }
+    firstPageButton.disabled = false;
+    prevButton.disabled = false;
+    lastPageButton.disabled = true;
+    nextButton.disabled = true;
+
+    getBooksInfo();
+  }
 }
 
 firstPageButton.disabled = true;
 prevButton.disabled = true;
-
-// Falta calcular la última página.
