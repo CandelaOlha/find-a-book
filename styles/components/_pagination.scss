@@ -14,12 +14,17 @@ main {
             color: $color-primary;
             font-size: 20px;
           }
-          &:hover {
+          &:enabled:hover {
             background-color: $color-primary;
             border-color: $color-primary;
             i {
               color: $color-light;
             }
+          }
+        }
+        button:disabled {
+          i {
+            color: #2176ff80;
           }
         }
       }

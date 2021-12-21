@@ -435,12 +435,15 @@ main .content-container .bookshelf .pagination button i {
   color: #2176ff;
   font-size: 20px;
 }
-main .content-container .bookshelf .pagination button:hover {
+main .content-container .bookshelf .pagination button:enabled:hover {
   background-color: #2176ff;
   border-color: #2176ff;
 }
-main .content-container .bookshelf .pagination button:hover i {
+main .content-container .bookshelf .pagination button:enabled:hover i {
   color: #fff;
+}
+main .content-container .bookshelf .pagination button:disabled i {
+  color: #2176ff80;
 }
 
 html {
