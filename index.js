@@ -13,10 +13,16 @@ const orderSelection = document.querySelector("#order-selection");
 const bookDetailsSection = document.querySelector(".book-details");
 const heroSection = document.querySelector(".hero-section");
 const searchBar = document.querySelector(".search-bar");
+const firstPageButton = document.querySelector("#first-page");
+const prevButton = document.querySelector("#prev");
+const nextButton = document.querySelector("#next");
+const lastPageButton = document.querySelector("#last-page");
 
 const apiKey = "AIzaSyDuUyytYz0OAoxTiqQefzhgYdG1K5v9Q3k";
 
-const getBooksInfo = (id) => {
+let currentPage = 0;
+
+const getMyBookshelves = (id) => {
     fetch(`https://www.googleapis.com/books/v1/users/110316076195152108075/bookshelves/${id}/volumes?key=${apiKey}`)
     .then(res =>  res.json())
     .then(data => {
@@ -35,9 +41,9 @@ const getBooksInfo = (id) => {
     })
   }
   
-getBooksInfo(1001);
-getBooksInfo(1002);
-getBooksInfo(1003);
+getMyBookshelves(1001);
+getMyBookshelves(1002);
+getMyBookshelves(1003);
 
 const displayBooksInHTML = (books, container) => {
     const bookCard = books.reduce((acc, curr) => {
@@ -62,12 +68,11 @@ const displayBooksInHTML = (books, container) => {
     container.innerHTML = bookCard;
 }
 
-searchForm.onsubmit = (e) => {
-  e.preventDefault();
-
-  fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=${typeSelection.value}&langRestrict=en&printType=books&orderBy=${orderSelection.value}&maxResults=12&key=${apiKey}`)
+const getBooksInfo = () => {
+  fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=${typeSelection.value}&langRestrict=en&printType=books&orderBy=${orderSelection.value}&startIndex=${currentPage}&maxResults=12&key=${apiKey}`)
   .then(res =>  res.json())
   .then(data => {
+    console.log(data)
     searchResults.classList.remove("hidden-bookshelf");
     searchResults.classList.add("bookshelf");
     bestSellersBookshelf.classList.add("hidden-bookshelf");
@@ -75,14 +80,20 @@ searchForm.onsubmit = (e) => {
     sciFiBookshelf.classList.add("hidden-bookshelf");
     displayBooksInHTML(data.items, searchResultsContainer);
     getBookCardID();
+    createPagination(data.totalItems);
   })
+}
+
+searchForm.onsubmit = (e) => {
+  e.preventDefault();
+
+  getBooksInfo();
 }
 
 const getBookDetails = (id) => {
   fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}`)
   .then(res => res.json())
   .then(data => {
-    console.log(data)
     displayBookDetailsInHTML(data);
   })
 }
@@ -246,3 +257,60 @@ const displayBookDetailsInHTML = (book) => {
     buyLink.style.display = "none";
   }
 }
+
+const createPagination = (totalItems) => {
+  lastPage = Math.ceil(totalItems / 12);
+
+  firstPageButton.onclick = () => {
+    currentPage = 0;
+  
+    firstPageButton.disabled = true;
+    prevButton.disabled = true;
+    lastPageButton.disabled = false;
+    nextButton.disabled = false;
+  
+    getBooksInfo();
+  }
+  
+  prevButton.onclick = () => {
+    currentPage = currentPage - 12;
+  
+    if (currentPage <= 0) {
+      firstPageButton.disabled = true;
+      prevButton.disabled = true;
+    }
+
+    lastPageButton.disabled = false;
+    nextButton.disabled = false;
+  
+    getBooksInfo();
+  }
+  
+  nextButton.onclick = () => {
+    currentPage = currentPage + 12;
+  
+    if (currentPage >= lastPage) {
+      lastPageButton.disabled = true;
+      nextButton.disabled = true;
+    }
+
+    firstPageButton.disabled = false;
+    prevButton.disabled = false;
+  
+    getBooksInfo();
+  }
+  
+  lastPageButton.onclick = () => {
+    currentPage = lastPage;
+  
+    firstPageButton.disabled = false;
+    prevButton.disabled = false;
+    lastPageButton.disabled = true;
+    nextButton.disabled = true;
+
+    getBooksInfo();
+  }
+}
+
+firstPageButton.disabled = true;
+prevButton.disabled = true;

@@ -420,6 +420,32 @@ main .content-container .book-details .book-image-container {
     padding: 0;
   }
 }
+main .content-container .bookshelf .pagination {
+  margin-top: 60px;
+  text-align: center;
+}
+main .content-container .bookshelf .pagination button {
+  background-color: #fff;
+  border: 1px solid #5a5a5a;
+  height: 45px;
+  transition: 0.1s;
+  width: 45px;
+}
+main .content-container .bookshelf .pagination button i {
+  color: #2176ff;
+  font-size: 20px;
+}
+main .content-container .bookshelf .pagination button:enabled:hover {
+  background-color: #2176ff;
+  border-color: #2176ff;
+}
+main .content-container .bookshelf .pagination button:enabled:hover i {
+  color: #fff;
+}
+main .content-container .bookshelf .pagination button:disabled i {
+  color: #2176ff80;
+}
+
 html {
   scroll-behavior: smooth;
 }
