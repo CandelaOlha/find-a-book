@@ -1,0 +1,28 @@
+main {
+  .content-container {
+    .bookshelf {
+      .pagination {
+        margin-top: 60px;
+        text-align: center;
+        button {
+          background-color: $color-light;
+          border: 1px solid $color-light-grey;
+          height: 45px;
+          transition: 0.1s;
+          width: 45px;
+          i {
+            color: $color-primary;
+            font-size: 20px;
+          }
+          &:hover {
+            background-color: $color-primary;
+            border-color: $color-primary;
+            i {
+              color: $color-light;
+            }
+          }
+        }
+      }
+    }
+  }
+}
