@@ -22,7 +22,7 @@ const apiKey = "AIzaSyDuUyytYz0OAoxTiqQefzhgYdG1K5v9Q3k";
 
 let currentPage = 0;
 
-const getMyBookshelves = (id) => {
+const getMyBookshelves = id => {
     fetch(`https://www.googleapis.com/books/v1/users/110316076195152108075/bookshelves/${id}/volumes?key=${apiKey}`)
     .then(res =>  res.json())
     .then(data => {
@@ -84,13 +84,13 @@ const getBooksInfo = () => {
   })
 }
 
-searchForm.onsubmit = (e) => {
+searchForm.onsubmit = e => {
   e.preventDefault();
 
   getBooksInfo();
 }
 
-const getBookDetails = (id) => {
+const getBookDetails = id => {
   fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}`)
   .then(res => res.json())
   .then(data => {
@@ -109,7 +109,7 @@ const getBookCardID = () => {
   }
 }
 
-const getBookImage = (book) => {
+const getBookImage = book => {
   if (book.volumeInfo.imageLinks.small) {
     return `<img src="${book.volumeInfo.imageLinks.small}" class="book-image">`;
   }
@@ -118,7 +118,7 @@ const getBookImage = (book) => {
   }
 }
 
-const getBookCategory = (book) => {
+const getBookCategory = book => {
   if (Array.isArray(book.volumeInfo.categories)) { // Esto es para que devuelva solo la primera categoría, porque en algunos casos el array es demasiado largo.
     return book.volumeInfo.categories[0];
   }
@@ -127,7 +127,7 @@ const getBookCategory = (book) => {
   }
 }
 
-const getAverageRating = (book) => {
+const getAverageRating = book => {
   if (book.volumeInfo.averageRating == 1) {
     return `<div class="rating-number">
     <i class="fas fa-star"></i>
@@ -211,7 +211,7 @@ const getAverageRating = (book) => {
   }
 }
 
-const displayBookDetailsInHTML = (book) => {
+const displayBookDetailsInHTML = book => {
   const bookDetails = `
     <div class="book-text-container">
       <h2 class="book-name">${book.volumeInfo.title}</h2>
@@ -258,7 +258,7 @@ const displayBookDetailsInHTML = (book) => {
   }
 }
 
-const createPagination = (totalItems) => {
+const createPagination = totalItems => {
   lastPage = Math.ceil(totalItems / 12);
 
   firstPageButton.onclick = () => {
@@ -311,6 +311,3 @@ const createPagination = (totalItems) => {
     getBooksInfo();
   }
 }
-
-firstPageButton.disabled = true;
-prevButton.disabled = true;
