@@ -72,7 +72,6 @@ const getBooksInfo = () => {
   fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=${typeSelection.value}&langRestrict=en&printType=books&orderBy=${orderSelection.value}&startIndex=${currentPage}&maxResults=12&key=${apiKey}`)
   .then(res =>  res.json())
   .then(data => {
-    console.log(data)
     searchResults.classList.remove("hidden-bookshelf");
     searchResults.classList.add("bookshelf");
     bestSellersBookshelf.classList.add("hidden-bookshelf");
@@ -103,7 +102,6 @@ const getBookCardID = () => {
   for (let i = 0; i < bookCards.length; i++) {
     bookCards[i].onclick = () => {
       bookCardID = bookCards[i].dataset.id;
-      console.log(bookCardID);
       getBookDetails(bookCardID);
     }
   }
