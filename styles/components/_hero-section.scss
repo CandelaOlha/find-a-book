@@ -23,9 +23,12 @@ header {
           @include cta();
         }
       }
-      .image {
-        max-width: 445px;
-        transform: rotate(15deg);
+      .image-container {
+        width: 445px;
+        .image {
+          width: 100%;
+          transform: rotate(15deg);
+        }
       }
     }
   }
