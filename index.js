@@ -109,14 +109,7 @@ const getBookCardID = () => {
   }
 }
 
-const getBookImage = book => {
-  if (book.volumeInfo.imageLinks.small) {
-    return `<img src="${book.volumeInfo.imageLinks.small}" class="book-image">`;
-  }
-  else {
-    return `<img src="images/empty-image.svg" class="book-image">`;
-  }
-}
+const getBookImage = book => book.volumeInfo.imageLinks.small ? `<img src="${book.volumeInfo.imageLinks.small}" class="book-image">` : `<img src="images/empty-image.svg" class="book-image">`;
 
 const getBookCategory = book => {
   if (Array.isArray(book.volumeInfo.categories)) { // Esto es para que devuelva solo la primera categoría, porque en algunos casos el array es demasiado largo.
