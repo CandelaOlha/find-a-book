@@ -22,7 +22,7 @@ const apiKey = "AIzaSyDuUyytYz0OAoxTiqQefzhgYdG1K5v9Q3k";
 
 let currentPage = 0;
 
-const getMyBookshelves = (id) => {
+const getMyBookshelves = id => {
     fetch(`https://www.googleapis.com/books/v1/users/110316076195152108075/bookshelves/${id}/volumes?key=${apiKey}`)
     .then(res =>  res.json())
     .then(data => {
@@ -72,7 +72,6 @@ const getBooksInfo = () => {
   fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput.value}&filter=${typeSelection.value}&langRestrict=en&printType=books&orderBy=${orderSelection.value}&startIndex=${currentPage}&maxResults=12&key=${apiKey}`)
   .then(res =>  res.json())
   .then(data => {
-    console.log(data)
     searchResults.classList.remove("hidden-bookshelf");
     searchResults.classList.add("bookshelf");
     bestSellersBookshelf.classList.add("hidden-bookshelf");
@@ -84,13 +83,13 @@ const getBooksInfo = () => {
   })
 }
 
-searchForm.onsubmit = (e) => {
+searchForm.onsubmit = e => {
   e.preventDefault();
 
   getBooksInfo();
 }
 
-const getBookDetails = (id) => {
+const getBookDetails = id => {
   fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}`)
   .then(res => res.json())
   .then(data => {
@@ -103,31 +102,16 @@ const getBookCardID = () => {
   for (let i = 0; i < bookCards.length; i++) {
     bookCards[i].onclick = () => {
       bookCardID = bookCards[i].dataset.id;
-      console.log(bookCardID);
       getBookDetails(bookCardID);
     }
   }
 }
 
-const getBookImage = (book) => {
-  if (book.volumeInfo.imageLinks.small) {
-    return `<img src="${book.volumeInfo.imageLinks.small}" class="book-image">`;
-  }
-  else {
-    return `<img src="images/empty-image.svg" class="book-image">`;
-  }
-}
+const getBookImage = book => book.volumeInfo.imageLinks.small ? `<img src="${book.volumeInfo.imageLinks.small}" class="book-image">` : `<img src="images/empty-image.svg" class="book-image">`;
 
-const getBookCategory = (book) => {
-  if (Array.isArray(book.volumeInfo.categories)) { // Esto es para que devuelva solo la primera categoría, porque en algunos casos el array es demasiado largo.
-    return book.volumeInfo.categories[0];
-  }
-  else {
-    return book.volumeInfo.categories;
-  }
-}
+const getBookCategory = book => Array.isArray(book.volumeInfo.categories) ? book.volumeInfo.categories[0] : book.volumeInfo.categories;
 
-const getAverageRating = (book) => {
+const getAverageRating = book => {
   if (book.volumeInfo.averageRating == 1) {
     return `<div class="rating-number">
     <i class="fas fa-star"></i>
@@ -211,7 +195,7 @@ const getAverageRating = (book) => {
   }
 }
 
-const displayBookDetailsInHTML = (book) => {
+const displayBookDetailsInHTML = book => {
   const bookDetails = `
     <div class="book-text-container">
       <h2 class="book-name">${book.volumeInfo.title}</h2>
@@ -256,9 +240,13 @@ const displayBookDetailsInHTML = (book) => {
   if (book.saleInfo.saleability === "NOT_FOR_SALE") {
     buyLink.style.display = "none";
   }
+
+  // Quise usar el operador de cortocircuito para estos 4 if, pero no me funcionó.
+  // Me funcionaba si después del && hacía un console.log.
+  // Pero si ponía, por ejemplo, bookCategory.style.display = "none", no me funcionaba.
 }
 
-const createPagination = (totalItems) => {
+const createPagination = totalItems => {
   lastPage = Math.ceil(totalItems / 12);
 
   firstPageButton.onclick = () => {
@@ -311,6 +299,3 @@ const createPagination = (totalItems) => {
     getBooksInfo();
   }
 }
-
-firstPageButton.disabled = true;
-prevButton.disabled = true;
