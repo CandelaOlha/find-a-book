@@ -242,6 +242,10 @@ const displayBookDetailsInHTML = book => {
   if (book.saleInfo.saleability === "NOT_FOR_SALE") {
     buyLink.style.display = "none";
   }
+
+  // Quise usar el operador de cortocircuito para estos 4 if, pero no me funcionó.
+  // Me funcionaba si después del && hacía un console.log.
+  // Pero si ponía, por ejemplo, bookCategory.style.display = "none", no me funcionaba.
 }
 
 const createPagination = totalItems => {
