@@ -129,8 +129,11 @@ header .hero-section .content-container .text-container .cta {
 header .hero-section .content-container .text-container .cta:hover {
   background-color: #075eeb;
 }
-header .hero-section .content-container .image {
-  max-width: 445px;
+header .hero-section .content-container .image-container {
+  width: 445px;
+}
+header .hero-section .content-container .image-container .image {
+  width: 100%;
   transform: rotate(15deg);
 }
 
