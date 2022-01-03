@@ -47,6 +47,20 @@ main {
   }
 }
 
+// Dark mode styles
+
+body.dark-mode {
+  main {
+    .content-container {
+      .bookshelf {
+        .book-card {
+          background-color: $color-light-grey;
+        }
+      }
+    }
+  }
+}
+
 // Responsive styles
 
 @media screen and (max-width: 970px) {

@@ -17,6 +17,9 @@ const firstPageButton = document.querySelector("#first-page");
 const prevButton = document.querySelector("#prev");
 const nextButton = document.querySelector("#next");
 const lastPageButton = document.querySelector("#last-page");
+const darkModeSwitch = document.querySelector(".dark-mode-switch");
+const body = document.querySelector("body");
+const heroSectionImage = document.querySelector(".image");
 
 const apiKey = "AIzaSyDuUyytYz0OAoxTiqQefzhgYdG1K5v9Q3k";
 
@@ -297,5 +300,16 @@ const createPagination = totalItems => {
     nextButton.disabled = true;
 
     getBooksInfo();
+  }
+}
+
+darkModeSwitch.onclick = () => {
+  darkModeSwitch.textContent = "Light mode";
+  body.classList.toggle("dark-mode");
+  if (heroSectionImage.src === "https://candelaolha.github.io/find-a-book/images/books.svg") { // Chequear si las rutas funcionan con GitHub pages
+    heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books-light-mode.svg";
+  }
+  else if (heroSectionImage.src === "https://candelaolha.github.io/find-a-book/images/books-light-mode.svg") {
+    heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books.svg";
   }
 }

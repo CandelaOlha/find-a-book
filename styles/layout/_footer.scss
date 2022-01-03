@@ -12,6 +12,18 @@ footer {
   }
 }
 
+// Dark mode styles
+
+body.dark-mode {
+  footer {
+    .content-container {
+      .credits {
+        color: $color-light;
+      }
+    }
+  }
+}
+
 // Responsive styles
 
 @media screen and (max-width: 599px) {

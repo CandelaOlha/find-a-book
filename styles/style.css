@@ -9,6 +9,10 @@ body {
   background-color: #fbfbfb;
 }
 
+body.dark-mode {
+  background-color: #313131;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -45,6 +49,10 @@ footer .content-container .link {
   text-decoration: none;
 }
 
+body.dark-mode footer .content-container .credits {
+  color: #fff;
+}
+
 @media screen and (max-width: 599px) {
   footer .content-container {
     align-items: stretch;
@@ -65,7 +73,7 @@ header .nav-bar {
 header .nav-bar .content-container {
   align-items: center;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   max-width: 1236px;
   width: 100%;
 }
@@ -86,6 +94,9 @@ header .nav-bar .content-container .homepage-link i {
 header .nav-bar .content-container .homepage-link .brand-name {
   font-size: 25px;
   font-weight: 500;
+}
+header .nav-bar .content-container .dark-mode-switch {
+  cursor: pointer;
 }
 
 header .hero-section {
@@ -137,6 +148,10 @@ header .hero-section .content-container .image-container .image {
   transform: rotate(15deg);
 }
 
+body.dark-mode header .hero-section .content-container .title {
+  color: #fff;
+}
+
 @media screen and (max-width: 1224px) {
   header .hero-section {
     height: auto;
@@ -165,6 +180,7 @@ main .content-container .search-bar .search-form {
   justify-content: space-between;
 }
 main .content-container .search-bar .search-form .search-label {
+  color: #313131;
   display: flex;
   flex-direction: column;
   font-size: 25px;
@@ -211,6 +227,13 @@ main .content-container .search-bar .search-form .filter-container .search-butto
   background-color: #075eeb;
 }
 
+body.dark-mode main .content-container .search-bar .search-label {
+  color: #fff;
+}
+body.dark-mode main .content-container .search-bar .filter-container label select {
+  color: #fff;
+}
+
 @media screen and (max-width: 970px) {
   main .content-container .search-bar .search-form {
     align-items: stretch;
@@ -238,6 +261,7 @@ main .content-container .bookshelf {
   padding-bottom: 120px;
 }
 main .content-container .bookshelf .title {
+  color: #313131;
   font-size: 40px;
   font-weight: 600;
   margin-bottom: 40px;
@@ -250,6 +274,10 @@ main .content-container .bookshelf .book-container {
 }
 main .content-container .hidden-bookshelf {
   display: none;
+}
+
+body.dark-mode main .content-container .bookshelf .title {
+  color: #fff;
 }
 
 @media screen and (max-width: 970px) {
@@ -305,6 +333,10 @@ main .content-container .bookshelf .book-card:nth-child(6n+6) {
 }
 main .content-container .bookshelf .book-card:nth-child(n+7) {
   margin-bottom: 0;
+}
+
+body.dark-mode main .content-container .bookshelf .book-card {
+  background-color: #5a5a5a;
 }
 
 @media screen and (max-width: 970px) {
