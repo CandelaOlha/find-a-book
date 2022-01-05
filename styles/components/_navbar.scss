@@ -6,7 +6,7 @@ header {
     justify-content: center;
     padding: 20px 40px;
     .content-container {
-      @include content-container($justify-content: flex-start);
+      @include content-container();
       .homepage-link {
         align-items: center;
         color: $color-light;
@@ -24,6 +24,9 @@ header {
           font-size: 25px;
           font-weight: 500;
         }
+      }
+      .dark-mode-switch {
+        cursor: pointer;
       }
     }
   }

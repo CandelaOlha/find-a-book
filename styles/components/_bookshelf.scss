@@ -5,6 +5,7 @@ main {
       flex-direction: column;
       padding-bottom: 120px;
       .title {
+        color: $color-font;
         font-size: 40px;
         font-weight: 600;
         margin-bottom: 40px;
@@ -18,6 +19,20 @@ main {
     }
     .hidden-bookshelf {
       display: none;
+    }
+  }
+}
+
+// Dark mode styles
+
+body.dark-mode {
+  main {
+    .content-container {
+      .bookshelf {
+        .title {
+          color: $color-light;
+        }
+      }
     }
   }
 }

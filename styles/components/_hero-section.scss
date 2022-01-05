@@ -34,6 +34,19 @@ header {
   }
 }
 
+// Dark mode styles
+body.dark-mode {
+  header {
+    .hero-section {
+      .content-container {
+        .title {
+          color: $color-light;
+        }
+      }
+    }
+  }
+}
+
 // Responsive styles
 
 @media screen and (max-width: 1224px) {
