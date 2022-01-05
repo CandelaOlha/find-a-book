@@ -54,13 +54,13 @@ body.dark-mode {
     .content-container {
       .search-bar {
         .search-label {
-          color: $color-light;
+          color: $color-font-dark-mode;
         }
         .filter-container {
           label {
-            color: $color-light;
+            color: $color-font-dark-mode;
             select {
-              color: $color-light;
+              color: $color-font-dark-mode;
             }
           }
         }
