@@ -50,7 +50,7 @@ footer .content-container .link {
 }
 
 body.dark-mode footer .content-container .credits {
-  color: #fff;
+  color: #efefef;
 }
 
 @media screen and (max-width: 599px) {
@@ -149,7 +149,7 @@ header .hero-section .content-container .image-container .image {
 }
 
 body.dark-mode header .hero-section .content-container .title {
-  color: #fff;
+  color: #efefef;
 }
 
 @media screen and (max-width: 1224px) {
@@ -228,13 +228,13 @@ main .content-container .search-bar .search-form .filter-container .search-butto
 }
 
 body.dark-mode main .content-container .search-bar .search-label {
-  color: #fff;
+  color: #efefef;
 }
 body.dark-mode main .content-container .search-bar .filter-container label {
-  color: #fff;
+  color: #efefef;
 }
 body.dark-mode main .content-container .search-bar .filter-container label select {
-  color: #fff;
+  color: #efefef;
 }
 
 @media screen and (max-width: 970px) {
@@ -280,7 +280,7 @@ main .content-container .hidden-bookshelf {
 }
 
 body.dark-mode main .content-container .bookshelf .title {
-  color: #fff;
+  color: #efefef;
 }
 
 @media screen and (max-width: 970px) {
@@ -342,7 +342,7 @@ body.dark-mode main .content-container .bookshelf .book-card {
   background-color: #3c3c3c;
 }
 body.dark-mode main .content-container .bookshelf .book-card .book-info .book-name {
-  color: #fff;
+  color: #efefef;
 }
 
 @media screen and (max-width: 970px) {
@@ -453,7 +453,7 @@ main .content-container .book-details .book-image-container {
 }
 
 body.dark-mode main .content-container .book-details {
-  color: #fff;
+  color: #efefef;
 }
 
 @media screen and (max-width: 970px) {
