@@ -61,6 +61,18 @@ main {
   }
 }
 
+// Dark mode styles
+
+body.dark-mode {
+  main {
+    .content-container {
+      .book-details {
+        color: $color-light;
+      }
+    }
+  }
+}
+
 // Responsive styles
 
 @media screen and (max-width: 970px) {

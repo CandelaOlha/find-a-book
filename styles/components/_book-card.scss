@@ -55,6 +55,11 @@ body.dark-mode {
       .bookshelf {
         .book-card {
           background-color: $color-light-grey;
+          .book-info {
+            .book-name {
+              color: $color-light;
+            }
+          }
         }
       }
     }

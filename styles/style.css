@@ -338,6 +338,9 @@ main .content-container .bookshelf .book-card:nth-child(n+7) {
 body.dark-mode main .content-container .bookshelf .book-card {
   background-color: #5a5a5a;
 }
+body.dark-mode main .content-container .bookshelf .book-card .book-info .book-name {
+  color: #fff;
+}
 
 @media screen and (max-width: 970px) {
   main .content-container .bookshelf .book-card,
@@ -444,6 +447,10 @@ main .content-container .book-details .book-image-container {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+body.dark-mode main .content-container .book-details {
+  color: #fff;
 }
 
 @media screen and (max-width: 970px) {
