@@ -230,6 +230,9 @@ main .content-container .search-bar .search-form .filter-container .search-butto
 body.dark-mode main .content-container .search-bar .search-label {
   color: #fff;
 }
+body.dark-mode main .content-container .search-bar .filter-container label {
+  color: #fff;
+}
 body.dark-mode main .content-container .search-bar .filter-container label select {
   color: #fff;
 }
@@ -336,7 +339,7 @@ main .content-container .bookshelf .book-card:nth-child(n+7) {
 }
 
 body.dark-mode main .content-container .bookshelf .book-card {
-  background-color: #5a5a5a;
+  background-color: #3c3c3c;
 }
 body.dark-mode main .content-container .bookshelf .book-card .book-info .book-name {
   color: #fff;

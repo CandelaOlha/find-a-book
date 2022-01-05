@@ -58,6 +58,7 @@ body.dark-mode {
         }
         .filter-container {
           label {
+            color: $color-light;
             select {
               color: $color-light;
             }
