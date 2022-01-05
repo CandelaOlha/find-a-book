@@ -304,7 +304,13 @@ const createPagination = totalItems => {
 }
 
 darkModeSwitch.onclick = () => {
-  darkModeSwitch.textContent = "Light mode";
+  if (darkModeSwitch.textContent === "Dark mode") {
+    darkModeSwitch.textContent = "Light mode";
+  }
+  else {
+    darkModeSwitch.textContent = "Dark mode";
+  }
+
   body.classList.toggle("dark-mode");
   if (heroSectionImage.src === "https://candelaolha.github.io/find-a-book/images/books.svg") { // Chequear si las rutas funcionan con GitHub pages
     heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books-light-mode.svg";
