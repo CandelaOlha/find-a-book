@@ -303,6 +303,8 @@ const createPagination = totalItems => {
   }
 }
 
+// Dark mode
+
 darkModeSwitch.onclick = () => {
   if (darkModeSwitch.textContent === "Dark mode") {
     darkModeSwitch.textContent = "Light mode";
@@ -312,10 +314,49 @@ darkModeSwitch.onclick = () => {
   }
 
   body.classList.toggle("dark-mode");
-  if (heroSectionImage.src === "https://candelaolha.github.io/find-a-book/images/books.svg") { // Chequear si las rutas funcionan con GitHub pages
-    heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books-light-mode.svg";
+
+  // if (heroSectionImage.src === "https://candelaolha.github.io/find-a-book/images/books.svg") { // Chequear si las rutas funcionan con GitHub pages
+  //   heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books-dark-mode.svg";
+  // }
+  // else if (heroSectionImage.src === "https://candelaolha.github.io/find-a-book/images/books-dark-mode.svg") {
+  //   heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books.svg";
+  // }
+
+  saveModeInLocalStorage();
+}
+
+const saveModeInLocalStorage = () => {
+  if (body.classList.contains("dark-mode")) {
+    const mode = {
+      mode: "dark", 
+    }
+    const modeIntoAJSON = JSON.stringify(mode);
+    localStorage.setItem("mode", modeIntoAJSON);
   }
-  else if (heroSectionImage.src === "https://candelaolha.github.io/find-a-book/images/books-light-mode.svg") {
-    heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books.svg";
+  else {
+      const mode = {
+        mode: "light",
+      }
+      const modeIntoAJSON = JSON.stringify(mode);
+      localStorage.setItem("mode", modeIntoAJSON);
   }
 }
+
+const getModeFromLocalStorage = () => {
+  if (localStorage.getItem("mode")) {
+    console.log("Hay algo en local storage");
+    const JSONModePreference = localStorage.getItem("mode");
+    const JSModePreference = JSON.parse(JSONModePreference);
+  
+    if (JSModePreference.mode === "dark") {
+        body.classList.add("dark-mode");
+        // heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books-dark-mode.svg";
+    }
+    else {
+      body.classList.remove("dark-mode");
+      // heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books.svg";
+    }
+  }
+}
+
+getModeFromLocalStorage();
