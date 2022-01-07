@@ -306,7 +306,6 @@ const createPagination = totalItems => {
 // Dark mode
 
 darkModeSwitch.onclick = () => {
-  console.log(heroSectionImage.src)
   if (darkModeSwitch.textContent === "Dark mode") {
     darkModeSwitch.textContent = "Light mode";
   }
