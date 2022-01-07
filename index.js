@@ -344,7 +344,6 @@ const saveModeInLocalStorage = () => {
 
 const getModeFromLocalStorage = () => {
   if (localStorage.getItem("mode")) {
-    console.log("Hay algo en local storage");
     const JSONModePreference = localStorage.getItem("mode");
     const JSModePreference = JSON.parse(JSONModePreference);
   
