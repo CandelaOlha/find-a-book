@@ -49,7 +49,7 @@ footer .content-container .link {
   text-decoration: none;
 }
 
-body.dark-mode footer .credits {
+body.dark-mode footer .content-container .credits {
   color: #efefef;
 }
 
@@ -273,7 +273,7 @@ main .content-container .bookshelf .book-container {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 main .content-container .hidden-bookshelf {
   display: none;
@@ -283,11 +283,6 @@ body.dark-mode main .content-container .bookshelf .title {
   color: #efefef;
 }
 
-@media screen and (max-width: 970px) {
-  main .content-container .bookshelf .book-container {
-    justify-content: space-between;
-  }
-}
 @media screen and (max-width: 599px) {
   main .content-container .bookshelf .title {
     font-size: 30px;
@@ -345,7 +340,7 @@ body.dark-mode main .content-container .bookshelf .book-card .book-info .book-na
   color: #efefef;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1000px) {
   main .content-container .bookshelf .book-card,
 main .content-container .bookshelf .book-card:nth-child(n+7) {
     margin-bottom: 60px;
