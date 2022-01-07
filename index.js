@@ -349,11 +349,11 @@ const getModeFromLocalStorage = () => {
   
     if (JSModePreference.mode === "dark") {
         body.classList.add("dark-mode");
-        // heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books-dark-mode.svg";
+        heroSectionImage.src = "images/books-dark-mode.svg";
     }
     else {
       body.classList.remove("dark-mode");
-      // heroSectionImage.src = "https://candelaolha.github.io/find-a-book/images/books.svg";
+      heroSectionImage.src = "images/books.svg";
     }
   }
 }
