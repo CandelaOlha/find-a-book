@@ -1,6 +1,12 @@
 # Find a book
 
-## About this project
+## How to start
+
+To access the project you must execute the following command in your console
+
+`npm install`
+
+## About the project
 
 This is the fourth project I did for the [ADA ITW](https://adaitw.org/) Frontend Development course.
 
