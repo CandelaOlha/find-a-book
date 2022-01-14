@@ -2,7 +2,7 @@
 
 ## How to start
 
-To access the project you must execute the following command in your console
+To access the project you must run the following command in your console:
 
 `npm install`
 
