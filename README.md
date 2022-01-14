@@ -1,16 +1,16 @@
 # Find a book
 
+## About this project
+
+This is the fourth project I did for the [ADA ITW](https://adaitw.org/) Frontend Development course.
+
+It is a website based on the [Google Books API](https://developers.google.com/books) that allows the user to find information about their favorite books.
+
 ## How to start
 
 To access the project you must run the following command in your console:
 
 `npm install`
-
-## About the project
-
-This is the fourth project I did for the [ADA ITW](https://adaitw.org/) Frontend Development course.
-
-It is a website based on the [Google Books API](https://developers.google.com/books) that allows the user to find information about their favorite books.
 
 ## How it works
 
