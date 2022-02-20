@@ -29,7 +29,7 @@ Also, if the user clicks on a specific book, they can find:
 
 ## Technologies
 
-- HTML5
+- HTML
 - Sass
 - Javascript
 
