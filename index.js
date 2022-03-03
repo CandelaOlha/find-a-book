@@ -44,6 +44,8 @@ const getMyBookshelves = id => {
     })
   }
   
+  // Todo el codigo que se ejecuta apenas carga la pagina, ponelo al final de todo
+  // Asi es mas facil entender el flujo de ejecución
 getMyBookshelves(1001);
 getMyBookshelves(1002);
 getMyBookshelves(1003);
@@ -51,6 +53,7 @@ getMyBookshelves(1003);
 const displayBooksInHTML = (books, container) => {
     const bookCard = books.reduce((acc, curr) => {
         if (curr.volumeInfo.title.length >= 30) {
+          // const shortTitle, esto nunca esta definido
           shortTitle = curr.volumeInfo.title.slice(0, 30);
           curr.volumeInfo.title = shortTitle.concat("...");
         }
@@ -104,17 +107,40 @@ const getBookCardID = () => {
   const bookCards = document.querySelectorAll(".book-card");
   for (let i = 0; i < bookCards.length; i++) {
     bookCards[i].onclick = () => {
+      // const bookCardID
       bookCardID = bookCards[i].dataset.id;
       getBookDetails(bookCardID);
     }
   }
 }
 
+// Cuando el codigo sea muyb largo, agrega un salto de linea (enter), asi el lector no tiene que scrollear. 
+// Mas de 80-90 caracteres (lo podes ver en VSCode, abajo de todo, como "Col"), ya deberias hacer 
+// salto de linea
 const getBookImage = book => book.volumeInfo.imageLinks.small ? `<img src="${book.volumeInfo.imageLinks.small}" class="book-image">` : `<img src="images/empty-image.svg" class="book-image">`;
 
 const getBookCategory = book => Array.isArray(book.volumeInfo.categories) ? book.volumeInfo.categories[0] : book.volumeInfo.categories;
 
 const getAverageRating = book => {
+
+  // Esto se podría resolver con un for 
+  // const ranking = book =>  {
+  //   const rank = book.volumeInfo.averageRating
+  //   let stars = Math.floor(rank);
+  //   let halfStars = (stars < rank);
+  //   let html = "";
+  //   for (let i = 1; i <= 5; i++) { 
+  //     if ( i <= stars) {
+  //       html += "</i><i class='fas fa-star'></i>";
+  //     } else if (i == stars + 1 && halfStars) {
+  //       html += "<i class='fas fa-star-half-alt'></i>";
+  //     } else {
+  //       html += "<i class='far fa-star'></i>";
+  //     }
+  //   }
+  //   return html;
+  // }
+
   if (book.volumeInfo.averageRating == 1) {
     return `<div class="rating-number">
     <i class="fas fa-star"></i>
@@ -247,9 +273,15 @@ const displayBookDetailsInHTML = book => {
   // Quise usar el operador de cortocircuito para estos 4 if, pero no me funcionó.
   // Me funcionaba si después del && hacía un console.log.
   // Pero si ponía, por ejemplo, bookCategory.style.display = "none", no me funcionaba.
+
+  // Funcionaría si escribis: 
+  // buyLink.style.display = book.saleInfo.saleability === "NOT_FOR_SALE" && "none", 
+  // pero en ese caso si no es not_for_sale te quedaría un display raro 
+  // No está mal resuelto con el if. 
 }
 
 const createPagination = totalItems => {
+  // const lastPage!
   lastPage = Math.ceil(totalItems / 12);
 
   firstPageButton.onclick = () => {
