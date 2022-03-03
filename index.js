@@ -348,10 +348,12 @@ const getModeFromLocalStorage = () => {
     const JSModePreference = JSON.parse(JSONModePreference);
   
     if (JSModePreference.mode === "dark") {
+        darkModeSwitch.textContent = "Light mode";
         body.classList.add("dark-mode");
         heroSectionImage.src = "images/books-dark-mode.svg";
     }
     else {
+      darkModeSwitch.textContent = "Dark mode";
       body.classList.remove("dark-mode");
       heroSectionImage.src = "images/books.svg";
     }
